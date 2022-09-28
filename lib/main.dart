@@ -1,5 +1,7 @@
 import 'package:desafio/componentes.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 void main() {
   runApp(const AppImc());
@@ -156,6 +158,66 @@ class _AppImcState extends State<AppImc> {
             Center(
               child: Componentes().criaTexto(resposta, corResposta, 30),
             ),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(0, 60, 0, 0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  SizedBox(
+                    height: 50,
+                    width: 50,
+                    child: GestureDetector(
+                      onTap: () {
+                        launchUrlString("https://github.com/Denis-Mendes");
+                      },
+                      child: Container(
+                        decoration: BoxDecoration(
+                          image: DecorationImage(
+                            image: AssetImage('assets/imgs/github.png'),
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 50,
+                    width: 50,
+                    child: GestureDetector(
+                      onTap: () {
+                        launchUrlString(
+                            "https://www.linkedin.com/in/denis-mendes-047583224/");
+                      },
+                      child: Container(
+                        decoration: BoxDecoration(
+                          image: DecorationImage(
+                            image: AssetImage('assets/imgs/linkedin.png'),
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 50,
+                    width: 50,
+                    child: GestureDetector(
+                      onTap: () {
+                        launchUrlString("https://twitter.com/idenismendes");
+                      },
+                      child: Container(
+                        decoration: BoxDecoration(
+                          image: DecorationImage(
+                            image: AssetImage('assets/imgs/twitter.png'),
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            )
           ],
         ),
       ),
